@@ -107,7 +107,7 @@ html,
   position: relative;
   top: 26px;
   left: 100px;
-  background: url('/assets/images/watermark.png');
+  background: url('assets/images/watermark.png');
   width: 300px;
   height: 52px;
   background-repeat: no-repeat;
