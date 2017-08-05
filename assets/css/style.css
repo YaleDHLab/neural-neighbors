@@ -107,7 +107,7 @@ html,
   position: relative;
   top: 26px;
   left: 100px;
-  background: url('assets/images/watermark.png');
+  background: url('https://s3-us-west-2.amazonaws.com/lab-apps/meserve-kunhardt/image-browser/assets/watermark.png');
   width: 300px;
   height: 52px;
   background-repeat: no-repeat;
