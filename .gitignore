@@ -1,4 +1,7 @@
 .DS_Store
 data/
+data.tar.gz
 *.swp
 *.pem
+assets/images/resized
+assets/images/thumbs
