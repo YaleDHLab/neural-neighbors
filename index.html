@@ -11,7 +11,7 @@
   <body>
     <div class='app-wrapper'>
       <header class='header'>
-        <img class='logo' src='assets/images/DHLab-mark.svg'>
+        <img class='logo' src='assets/images/DHLab-mark.svg' alt='DHLAB logo'>
         <div class='app-name'>NEURAL NEIGHBORS</div>
         <div class='tagline'>Pictorial Trops in the Meserve-Kunhardt Collection</div>
       </header>
@@ -19,7 +19,8 @@
         <div class='slideshow-items'></div>
         <div class='slideshow-guide'>
           <p>Explore selections of over 27,000 photographs from the Meserve-Kunhardt Collection; reload for more. Mouse over an image to see visually-similar pictures.</p>
-          <p>Similarity is based on <a href='https://en.wikipedia.org/wiki/Nearest_neighbor_search#Approximate_nearest_neighbor' target='_'>approximate nearest neighbors</a> from 2,048 dimensions from the penultimate tensor in an <a href='https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf' target='_'>Inception </a>Convolutional Neural Network, trained on <a href='http://image-net.org/challenges/LSVRC/2012/' target='_'>ImageNet 2012</a>. Inference run using <a href='https://www.tensorflow.org/versions/r0.10/tutorials/image_recognition/index.html' target='_'>TensorFlow</a> with CUDA-accelearted <a href='https://developer.nvidia.com/cudnn' target='_'>cuDNN</a>.</p>
+          <p>Similarity is based on <a href='https://en.wikipedia.org/wiki/Nearest_neighbor_search#Approximate_nearest_neighbor' target='_blank'>approximate nearest neighbors</a> from 2,048 dimensions from the penultimate tensor in an <a href='https://www.cs.unc.edu/~wliu/papers/GoogLeNet.pdf' target='_blank'>Inception </a>Convolutional Neural Network, trained on <a href='http://image-net.org/challenges/LSVRC/2012/' target='_blank'>ImageNet 2012</a>. Inference run using <a href='https://www.tensorflow.org/versions/r0.10/tutorials/image_recognition/index.html' target='_blank'>TensorFlow</a> with CUDA-accelearted <a href='https://developer.nvidia.com/cudnn' target='_blank'>cuDNN</a>.</p>
+        </div>
       </section>
       <section class='gallery'>
         <div class='gallery-items'>
@@ -28,11 +29,11 @@
       </section>
     </div>
     <footer class='footer'>
-      <div class='watermark' />
+      <div class='watermark'></div>
     </footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
+    <script src='https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js'></script>
+    <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
+    <script src='assets/js/gallery.js'></script>
   </body>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js'></script>
-  <script src='https://unpkg.com/packery@2.1/dist/packery.pkgd.min.js'></script>
-  <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
-  <script src='assets/js/gallery.js'></script>
 </html>
