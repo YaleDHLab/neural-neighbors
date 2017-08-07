@@ -250,3 +250,9 @@ body.captions .slideshow-item.loaded .caption,
 body.captions .slideshow-item.hidden .caption {
   display: none;
 }
+
+@media(max-width: 900px) {
+  .gallery-item.captions .caption {
+    display: none;
+  }
+}
