@@ -224,6 +224,18 @@ html,
 }
 
 /**
+* Similarity Metric
+**/
+
+.slideshow-simval {
+	width:100%;
+	height:5px;
+	border:1px solid black;
+	box-sizing: border-box;
+	margin-bottom:1px;
+}
+
+/**
 * Captions
 **/
 
