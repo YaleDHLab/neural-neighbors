@@ -13,6 +13,7 @@
       // selectors
       galleryItemClass = 'gallery-item', // className of each grid item
       galleryImageClass = 'gallery-image', // className of each gallery image
+      galleryItemSimValClass = 'slideshow-simval', // className of each similarity value
       slideshowItemClass = 'slideshow-item', // className of each slideshow item
 
       // parameters
@@ -86,6 +87,10 @@
       var div = document.createElement('div');
       div.className = slideshowItemClass;
 
+      // add the similarity value div
+      var simdiv = document.createElement('div');
+      simdiv.className = galleryItemSimValClass;
+          
       // add the image
       var img = document.createElement('img');
       img.src = ' ';
@@ -94,6 +99,7 @@
       var caption = document.createElement('div');
       caption.className = 'caption';
 
+      div.appendChild(simdiv);
       div.appendChild(img);
       div.appendChild(caption);
       slideshow.appendChild(div);
@@ -283,12 +289,15 @@
         if (nn.caption) {
           var parentClass = caption.parentNode.className.replace(' hidden', '');
           caption.parentNode.setAttribute('class', parentClass);
-          caption.innerHTML = nn.caption;
+          caption.innerHTML = nn.caption + ' [' + Math.round(nn.similarity*100) + '%]';
         } else {
           var parentClass = caption.parentNode.className + ' hidden';
           caption.parentNode.setAttribute('class', parentClass);
-          caption.innerHTML = '';
+          caption.innerHTML = ' [' + Math.round(nn.similarity*100) + '%]';
         }
+        var simdiv = container.querySelector('.slideshow-simval');
+        simdiv.setAttribute('style', 'background: -moz-linear-gradient(left, #eab755 ' + Math.round(nn.similarity*100) + '%, #ededed ' + (100-(parseInt(Math.round(nn.similarity*100)))) + '%);background: -ms-linear-gradient(left, #eab755 ' + Math.round(nn.similarity*100) + '%, #ededed ' + (100-(parseInt(Math.round(nn.similarity*100)))) + '%);background: linear-gradient(left, #eab755 ' + Math.round(nn.similarity*100) + '%, #ededed ' + (100-(parseInt(Math.round(nn.similarity*100)))) + '%);background: -webkit-linear-gradient(left, #eab755 ' + Math.round(nn.similarity*100) + '%, #ededed ' + (100-(parseInt(Math.round(nn.similarity*100)))) + '%);'); 
+
       })
 
       slideshow.style.display = 'block';
