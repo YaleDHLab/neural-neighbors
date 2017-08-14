@@ -296,7 +296,9 @@
           caption.innerHTML = ' [' + Math.round(nn.similarity*100) + '%]';
         }
         var simdiv = container.querySelector('.slideshow-simval');
-        simdiv.setAttribute('style', 'background: -moz-linear-gradient(left, #eab755 ' + Math.round(nn.similarity*100) + '%, #ededed ' + (100-(parseInt(Math.round(nn.similarity*100)))) + '%);background: -ms-linear-gradient(left, #eab755 ' + Math.round(nn.similarity*100) + '%, #ededed ' + (100-(parseInt(Math.round(nn.similarity*100)))) + '%);background: linear-gradient(left, #eab755 ' + Math.round(nn.similarity*100) + '%, #ededed ' + (100-(parseInt(Math.round(nn.similarity*100)))) + '%);background: -webkit-linear-gradient(left, #eab755 ' + Math.round(nn.similarity*100) + '%, #ededed ' + (100-(parseInt(Math.round(nn.similarity*100)))) + '%);'); 
+        var fuel = Math.round(nn.similarity*100);
+        var empty = (100-(parseInt(fuel)));
+        simdiv.setAttribute('style', 'background: -moz-linear-gradient(left, #eab755 ' + fuel + '%, #ededed ' + empty + '%);background: -ms-linear-gradient(left, #eab755 ' + fuel + '%, #ededed ' + empty + '%);background: -webkit-linear-gradient(left, #eab755 ' + fuel + '%, #ededed ' + empty + '%);background: linear-gradient(left, #eab755 ' + fuel + '%, #ededed ' + empty + '%);'); 
 
       })
 
