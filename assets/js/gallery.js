@@ -13,7 +13,8 @@
       // selectors
       galleryItemClass = 'gallery-item', // className of each grid item
       galleryImageClass = 'gallery-image', // className of each gallery image
-      galleryItemSimValClass = 'slideshow-simval', // className of each similarity value
+      similarityClass = 'slideshow-similarity', // className of each similarity value
+      similarityBarClass = 'similarity-bar', // className of the similarity bar
       slideshowItemClass = 'slideshow-item', // className of each slideshow item
 
       // parameters
@@ -87,10 +88,14 @@
       var div = document.createElement('div');
       div.className = slideshowItemClass;
 
-      // add the similarity value div
-      var simdiv = document.createElement('div');
-      simdiv.className = galleryItemSimValClass;
-          
+      // add the similarity value container
+      var similarityDiv = document.createElement('div');
+      similarityDiv.className = similarityClass;
+
+      // add the similarity value bar
+      var similarityBar = document.createElement('div');
+      similarityBar.className = similarityBarClass;
+
       // add the image
       var img = document.createElement('img');
       img.src = ' ';
@@ -99,8 +104,9 @@
       var caption = document.createElement('div');
       caption.className = 'caption';
 
-      div.appendChild(simdiv);
+      similarityDiv.appendChild(similarityBar);
       div.appendChild(img);
+      div.appendChild(similarityDiv);
       div.appendChild(caption);
       slideshow.appendChild(div);
     })
@@ -277,8 +283,10 @@
       var containers = slideshow.querySelectorAll('.' + slideshowItemClass);
 
       _.take(nearestNeighbors, slideshowImages).forEach(function(nn, idx) {
-        var container = containers[idx];
-        var img = container.querySelector('img');
+        var container = containers[idx],
+            img = container.querySelector('img'),
+            similarity = Math.round(nn.similarity*100);
+
         img.onload = function() {
           var parent = this.parentNode;
           var parentClass = parent.className;
@@ -289,17 +297,14 @@
         if (nn.caption) {
           var parentClass = caption.parentNode.className.replace(' hidden', '');
           caption.parentNode.setAttribute('class', parentClass);
-          caption.innerHTML = nn.caption + ' [' + Math.round(nn.similarity*100) + '%]';
+          caption.innerHTML = nn.caption + ' [' + similarity + '%]';
         } else {
           var parentClass = caption.parentNode.className + ' hidden';
           caption.parentNode.setAttribute('class', parentClass);
-          caption.innerHTML = ' [' + Math.round(nn.similarity*100) + '%]';
+          caption.innerHTML = ' [' + similarity + '%]';
         }
-        var simdiv = container.querySelector('.slideshow-simval');
-        var fuel = Math.round(nn.similarity*100);
-        var empty = (100-(parseInt(fuel)));
-        simdiv.setAttribute('style', 'background: -moz-linear-gradient(left, #eab755 ' + fuel + '%, #ededed ' + empty + '%);background: -ms-linear-gradient(left, #eab755 ' + fuel + '%, #ededed ' + empty + '%);background: -webkit-linear-gradient(left, #eab755 ' + fuel + '%, #ededed ' + empty + '%);background: linear-gradient(left, #eab755 ' + fuel + '%, #ededed ' + empty + '%);'); 
-
+        var similarityBar = container.querySelector('.' + similarityBarClass);
+        similarityBar.style.width = similarity + '%';
       })
 
       slideshow.style.display = 'block';
