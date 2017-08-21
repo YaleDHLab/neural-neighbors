@@ -161,13 +161,22 @@ html,
 }
 
 .slideshow-guide a {
-  text-decoration: none;
-  color: #aaa;
+  color: #fff;
 }
 
 .slideshow-guide p {
   margin: 32px 0;
 }
+
+.slideshow-guide p.technical { 
+  font-size: 0.8em;
+  line-height:1.4em;
+  color: #aaa;
+}
+
+.slideshow-guide p.technical a {
+  color: #aaa;
+}  
 
 @media(max-width: 785px) {
   .slideshow-guide {
