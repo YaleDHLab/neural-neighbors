@@ -224,6 +224,22 @@ html,
 }
 
 /**
+* Similarity Metric
+**/
+
+.slideshow-similarity {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 2px;
+  background: #ededed;
+}
+
+.similarity-bar {
+  background: #eab755;
+  height: 100%;
+}
+
+/**
 * Captions
 **/
 
@@ -239,7 +255,7 @@ html,
   word-wrap: break-word;
   white-space: normal;
   display: none;
-  margin-top: -5px;
+  margin-top: -2px;
 }
 
 body.captions .slideshow-item.loaded .caption,
