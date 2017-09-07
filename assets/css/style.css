@@ -18,6 +18,10 @@ html,
   background: #333; 
 }
 
+.gray-text {
+  color: #999;
+}
+
 /***
 * Header
 ***/
@@ -244,6 +248,7 @@ html,
   height: 3px;
   margin-bottom: 2px;
   background: #ededed;
+  margin-top: -2px;
 }
 
 .similarity-bar {

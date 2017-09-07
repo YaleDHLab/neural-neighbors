@@ -279,13 +279,14 @@
       guide.style.display = 'none';
 
       // display the nearest neighbors
-      var nearestNeighbors = JSON.parse(data);
-      var containers = slideshow.querySelectorAll('.' + slideshowItemClass);
+      var nearestNeighbors = JSON.parse(data),
+          containers = slideshow.querySelectorAll('.' + slideshowItemClass);
 
       _.take(nearestNeighbors, slideshowImages).forEach(function(nn, idx) {
         var container = containers[idx],
             img = container.querySelector('img'),
-            similarity = Math.round(nn.similarity*100);
+            similarity = Math.round(nn.similarity*100),
+            similarityElem = ' <div class="gray-text">' + similarity + '%</div>'
 
         img.onload = function() {
           var parent = this.parentNode;
@@ -297,11 +298,11 @@
         if (nn.caption) {
           var parentClass = caption.parentNode.className.replace(' hidden', '');
           caption.parentNode.setAttribute('class', parentClass);
-          caption.innerHTML = nn.caption + ' [' + similarity + '%]';
+          caption.innerHTML = nn.caption + similarityElem;
         } else {
-          var parentClass = caption.parentNode.className + ' hidden';
+          var parentClass = caption.parentNode.className;
           caption.parentNode.setAttribute('class', parentClass);
-          caption.innerHTML = ' [' + similarity + '%]';
+          caption.innerHTML = 'Untitled ' + similarityElem;
         }
         var similarityBar = container.querySelector('.' + similarityBarClass);
         similarityBar.style.width = similarity + '%';
