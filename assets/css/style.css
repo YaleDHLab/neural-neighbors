@@ -112,7 +112,7 @@ html,
   position: relative;
   top: 26px;
   left: 100px;
-  background: url('/neural-neighbors/assets/images/beinecke-logo.png');
+  background: url('https://raw.githubusercontent.com/YaleDHLab/neural-neighbors/master/assets/images/beinecke-logo.svg');
   height: 52px;
   width: auto;
   background-repeat: no-repeat;
