@@ -121,6 +121,7 @@ html,
   display: inline-block;
   float: right;
   margin: 45px 5% 0 0;
+  color: #999;
 }
 
 @media(max-width: 1050px) {
