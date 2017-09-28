@@ -140,16 +140,17 @@
         e.preventDefault();
         handleMouseenter(this);
       })
-
-      img.addEventListener('mouseleave', function(e) {
-        e.stopPropagation();
-        e.preventDefault();
-        handleMouseleave(this);
-      })
     }
 
     document.body.addEventListener('click', function(e) {
       handleClick(e);
+    })
+
+    var galleryItems = document.querySelector('.gallery-items');
+    galleryItems.addEventListener('mouseleave', function(e) {
+      e.stopPropagation();
+      e.preventDefault();
+      handleMouseleave(this);
     })
   }
 
