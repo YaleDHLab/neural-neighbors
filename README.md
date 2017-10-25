@@ -19,10 +19,10 @@ cd neural-neighbors
 wget https://s3-us-west-2.amazonaws.com/lab-apps/meserve-kunhardt/image-browser/data.tar.gz
 tar -zxf data.tar.gz
 
-# Python3
+# Python 3
 python -m http.server 7052
 
-# Python3
+# Python 2
 python -m SimpleHTTPServer 7052
 ```
 
