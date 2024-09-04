@@ -1,3 +1,7 @@
+# Note: This repository has been archived
+This project was developed under a previous phase of the Yale Digital Humanities Lab. Now a part of Yale Library’s Computational Methods and Data department, the Lab no longer includes this project in its scope of work. As such, it will receive no further updates.
+
+
 # TSNE Image Browser
 
 This repository hosts source code used to create a similar image browser. Users can mouse over images to identify similar images, or click on images to read more information about the particular photograph.
